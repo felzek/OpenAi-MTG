@@ -134,3 +134,5 @@ def showbattlefield(p1, p2):
             print(p2.battlefield[i].cardtype, i + len(p1.battlefield) + 2, end=" ")
 
     print("\n __________ P2 _____________")
+
+    #wfwgwg
