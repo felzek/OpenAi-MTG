@@ -94,3 +94,4 @@ class magicgame(Env):
 
 a = magicgame()
 print(a.p1_hand)
+
