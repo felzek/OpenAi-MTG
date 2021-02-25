@@ -135,4 +135,4 @@ def showbattlefield(p1, p2):
 
     print("\n __________ P2 _____________")
 
-    #wfwgwg
+    
