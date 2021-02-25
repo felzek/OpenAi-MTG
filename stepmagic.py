@@ -28,6 +28,7 @@ class mainPhaseOne(Enum):
     play_s_t_c = 2
     play_s_self = 3
     play_s_opp = 4
+    pass_phase = 8
 
 # combat phase
 class combatPhase(Enum):
@@ -38,6 +39,7 @@ class combatPhase(Enum):
     block_u_c = 7
     # if choose not to block
     p2.life -= 1 #player who's turn it is not loses a life point
+    pass_phase = 8
 
 # main phase II
 class mainPhaseTwo(Enum):
@@ -49,6 +51,7 @@ class mainPhaseTwo(Enum):
     play_s_t_c = 2
     play_s_self = 3
     play_s_opp = 4
+    pass_phase = 8
 
 # discard phase
 class discardPhase(Enum):
@@ -56,3 +59,19 @@ class discardPhase(Enum):
     # insert code to make that happen here
 
 #end of turn could technically be a phase but we have nothing to do in this because of our simplified setup
+
+class switchTurn():
+    # after discard phase, starts beginTurn() for next player
+
+class PlayerTurn():
+    # go through the phases
+    beginTurn
+    mainPhaseOne
+    combatPhase
+    mainPhaseTwo
+    discardPhase
+    #in this particular order, please
+
+class endGame():
+    # game ends when life point is at or below 0
+    # game ends when you try to draw a card from a non-existant deck
