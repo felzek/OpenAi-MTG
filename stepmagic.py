@@ -38,7 +38,7 @@ class combatPhase(Enum):
     # if choose to block
     block_u_c = 7
     # if choose not to block
-    p2.life -= 1 #player who's turn it is not loses a life point
+    p2.life -= 1 #player who's being attacked loses a life point (to be changed)
     pass_phase = 8
 
 # main phase II
