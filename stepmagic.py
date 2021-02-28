@@ -11,24 +11,43 @@ os.system('cls')
 # beginning of turn: untap, upkeep, draw
 # coin flip mechanism to decide turn order, maybe?
 class beginTurn(Enum):
-    # u = untapped, t = tapped, c = creature, l = land, s = spell
-    t_c = u_c # tapped creature to untapped creature
-    t_l = u_l # tapped land to untapped land
-    #upkeep is not important right now
-    #if player 1's turn then [on very first turn, you don't get to draw a card] 
-    p1_draw(1)
-    #if player 2's turn then
-    p2_draw(1)
+    landforturn == False
+    if p1: #this line needs editing
+        for k in p1.battlefield:
+        p1.battlefield[k].untapped = True
+        p1_draw(1)
+        #If it's the very first turn p1 does not draw
+    if p2:
+        for k in p2.battlefield:
+        p2.battlefield[k].untapped = True
+        p2_draw(1)
+
 
 # main phase I
 class mainPhaseOne(Enum):
-    play_l = 5 # play land (only allowed to do once per turn)
-    play_c = 0 #  use land as mana to play a creature or spell
-    play_s_u_c = 1
-    play_s_t_c = 2
-    play_s_self = 3
-    play_s_opp = 4
-    pass_phase = 8
+    # call play function, and "do... while" possible to play a card or pass the phase
+    if p1:
+        do {
+            #Add a line for passing phase to attack phase
+            p1.play()
+            manapool = 0
+                for k in range(len(self.battlefield)):
+                    if isinstance(self.battlefield[k], land):
+                        if self.battlefield[k].untapped:
+                            if manapool < self.hand[choice].manacost:
+                                manapool +=1
+        } while(landforturn == False and manapool != 0)
+    if p2:
+        do {
+            #Add a line for passing phase to attack phase
+            p2.play()
+            manapool = 0
+                for k in range(len(self.battlefield)):
+                    if isinstance(self.battlefield[k], land):
+                        if self.battlefield[k].untapped:
+                            if manapool < self.hand[choice].manacost:
+                                manapool +=1
+        } while(landforturn == False and manapool != 0)
 
 # combat phase
 class combatPhase(Enum):
@@ -43,20 +62,37 @@ class combatPhase(Enum):
 
 # main phase II
 class mainPhaseTwo(Enum):
-    # play a land if you didn't do it during main phase I
-    play_l = 5
-    # everything else is exactly the same as phase I
-    play_c = 0 #  use land as mana to play a creature or spell
-    play_s_u_c = 1
-    play_s_t_c = 2
-    play_s_self = 3
-    play_s_opp = 4
-    pass_phase = 8
+        if p1:
+        do {
+            #Add a line for passing phase to attack phase
+            p1.play()
+            manapool = 0
+                for k in range(len(self.battlefield)):
+                    if isinstance(self.battlefield[k], land):
+                        if self.battlefield[k].untapped:
+                            if manapool < self.hand[choice].manacost:
+                                manapool +=1
+        } while(landforturn == False and manapool != 0)
+    if p2:
+        do {
+            #Add a line for passing phase to attack phase
+            p2.play()
+            manapool = 0
+                for k in range(len(self.battlefield)):
+                    if isinstance(self.battlefield[k], land):
+                        if self.battlefield[k].untapped:
+                            if manapool < self.hand[choice].manacost:
+                                manapool +=1
+        } while(landforturn == False and manapool != 0)
 
 # discard phase
 class discardPhase(Enum):
-    # if you have more than 7 cards in your hand. get rid of one of them
-    # insert code to make that happen here
+    if p1:
+        if len(p1.hand()) > 7:
+            #discard down to 7 cards
+            num = len(p1.hand()) - 7
+            print("You need to discard " + num + "cards.")
+            #Take player input on which cards to discard
 
 #end of turn could technically be a phase but we have nothing to do in this because of our simplified setup
 

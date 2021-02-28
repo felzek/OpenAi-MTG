@@ -96,7 +96,7 @@ class player:
                         if manapool < self.hand[choice].manacost:
                             self.battlefield[k].untapped = False
                             manapool +=1
-                            print("1 mana added")
+                            print("1 mana added") # Was this a testing line needs to be removed?
             if manapool < self.hand[choice].manacost:
                 print("You dont have enough untapped mana to play that")
             else:
@@ -155,10 +155,12 @@ class creature(card):
     def attack(card):
         if card.status == "untapped":
             card.status = "attacking"
+            #Need to tap card for the attack, give error message if already tapped?
 
     def block(self):
         if card.status == "untapped":
             card.status = "blocking"
+            #Error message for if already tapped
 
 class spell(card):
     def __init__(self, id, cardtype):
@@ -221,9 +223,8 @@ targetables.extend([test1, test2, test3])
 
 showbattlefield(p1, p2)
 p2.showhand()
-p2.play()
-p2.play()
-p2.play()
-p2.play()
+p2.showdeck()
+
+
 
 
