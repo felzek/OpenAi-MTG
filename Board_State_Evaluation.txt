@@ -1,0 +1,17 @@
+Board State Evaluation
+1)Number of Cards in each player hands (perfect information)
+	- more cards in hand is better
+2)Number of Creatures (perfect information)
+	- having more is better
+3)Life Totals (perfect information)
+	- having more is better
+4)Number of Cards in Deck (perfect information)
+	- having more is better
+
+Add weights in term of importance.
+
+Luck Factor: Random card draws screw over AI. 
+Make sure that it doesn't remember those or modify itself based on those.
+Maybe use number of lands to calculate Luck Factor.
+
+Note: Knowing the build of your opponent's deck (typically not known).

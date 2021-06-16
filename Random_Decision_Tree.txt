@@ -1,0 +1,43 @@
+1) 0 - creature (comes in untapped)
+	> Tap it to attack
+
+2) 1 - spell
+ > target
+   > P1 = 1
+   > P2 = 2
+
+3) 7 - land (if land is already played in the turn can't play another one)
+	> 1 tapped land for a creature
+	> 2 tapped lands for a spell
+	> Land gets untapped at the end of the turn
+
+4) 8 means pass
+
+How many P1/P2 attackers? Any N attackers, 0 is pass (20 creatures in a deck)
+
+How many P1/P2 blockers? Any N blockers, 0 is pass (20 creatures in a deck)
+
+
+matrix/dataframe for P1 and P2
+
+each row is a turn
+each column is a phase (3 columns)
+ inside each Row, column is a decision array or dictionary (player choices)
+
+"NaN" for non-filled values
+
+1,2,3 is P1 phases
+4 means switch to P2 (set phase value back to 11)
+
+11,12,13 is P2 phases
+14 means switch to P1 (reset phase value back to 1)
+
+1,11 - Main Phase 1
+2,12 - Attack
+3,13 - Blocking Phase
+
+P1 Turn
+Turn 1 : {8}, {3}, {1}
+
+P2 Turn
+Turn 1: {7,0,{1,1},8},{1},{1}
