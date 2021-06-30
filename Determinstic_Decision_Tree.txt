@@ -1,0 +1,70 @@
+(Basic Turn Strategy that we give the computer to start with)
+
+Player Phase 1
+0 - creature
+1 - spell
+2 - land
+8 - pass
+
+1) multinomial distribution where each choice has a probability associated with it (one attempt):
+
+Playing a land (2) - 100%
+Playing a spell (1) - 0%
+Playing a creature (0) - 0%
+Passing (8) - 0%
+
+	> If player has a land then he just plays it:
+		Playing a creature (0) - 45%
+		Playing a spell (1) - 45%
+		Pass (8) - 10%
+
+	> If player doesn't have land:
+		Playing a creature (0) - 45%
+		Playing a spell (1) - 45%
+		Pass (8) - 10%
+
+2) Player plays a spell
+
+1 - Player 1 Life Total
+2 - Player 2 Life Total
+3 - Player 1 untapped creature
+4 - Player 1 tapped creature
+5 - Player 2 untapped creature
+6 - Player 2 tapped creature
+
+	> P1 plays a spell
+		1 - 5%
+		2 - 85/3 %
+		3 - 5%
+		4 - 5%
+		5 - 85/3 %
+		6 - 85/3 %
+
+	> P2 plays a spell
+		1 - 85/3%
+		2 - 5%
+		3 - 85/3%
+		4 - 85/3%
+		5 - 5%
+		6 - 5%
+
+3) Player plays a creature (nothing really happens)
+
+Player Passes and move on to Phase 2
+
+1) Player Phase 2 (Attack Phase):
+	> Favor choosing max number of creatures (n):
+		-  0,1,2,...,n-1 creatures attacked: 100/(n+2) %
+		-  n creatures attacked: 2*[100/(n+2)] %
+
+Phase 3
+
+1) Opposing Player Phase 3 (Blocking Phase):
+	> Favor choosing max number of creatures (n):
+		-  0,1,2,...,n-1 creatures used to block: 100/(n+2) %
+		-  n creatures used to block: 2*[100/(n+2)] %
+
+Update after every decision computer makes: (the tough part)
+Punishment for doing stupid things or illegal things
+Reward for doing good things
+

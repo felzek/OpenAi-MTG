@@ -6,6 +6,7 @@
    > P1 = 1
    > P2 = 2
 
+
 3) 7 - land (if land is already played in the turn can't play another one)
 	> 1 tapped land for a creature
 	> 2 tapped lands for a spell
