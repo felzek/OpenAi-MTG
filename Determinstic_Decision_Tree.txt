@@ -8,10 +8,10 @@ Player Phase 1
 
 1) multinomial distribution where each choice has a probability associated with it (one attempt):
 
-Playing a land (2) - 100%
-Playing a spell (1) - 0%
-Playing a creature (0) - 0%
-Passing (8) - 0%
+Playing a land (2) - 70%
+Playing a spell (1) - 10%
+Playing a creature (0) - 10%
+Passing (8) - 10%
 
 	> If player has a land then he just plays it:
 		Playing a creature (0) - 45%
