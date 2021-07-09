@@ -5,6 +5,7 @@ Two separate reward systems:
 Turn by turn reward system:
 	1) reward for legal move
 	2) negative reward for illegal move
+		-Noted by print statements "You can't play that.", "You have already played a land for turn."
 	3) reward for playing land in main phase
 	4) reward for spells targeting other player's creatures or life
 	5) negative reward for spells targeting your own creatures or life
