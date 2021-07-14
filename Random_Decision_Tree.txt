@@ -45,3 +45,8 @@ Turn 1: {7,0,{1,1},8},{1},{1}
 
 Sanity Checks:
 3-5 creatures on average on the field: max attacking creatures are 3
+
+
+Current Illegal Move:
+Not a valid target ---> spells targeting creatures not on the field (tapped or untapped)
+Not enough mana ----> Can be spell or creature
