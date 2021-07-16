@@ -68,3 +68,52 @@ Update after every decision computer makes: (the tough part)
 Punishment for doing stupid things or illegal things
 Reward for doing good things
 
+~~~~~~~
+
+Target only things on the feild, favor target opponent:
+
+P1 (1) and P2 (2) life totals are always valid:
+values = [1,2]
+prob = [.05, .95]
+Check for targets
+3 - Player 1 untapped creature (0 in p1_battlefield)
+4 - Player 1 tapped creature   (3 in p1_battlefield)
+5 - Player 2 untapped creature (0 in p2_battlefield)
+6 - Player 2 tapped creature   (3 in p2_battlefield)
+
+player 1 valid targets, no valid p2 tagets on field:
+set(p1_bf) --> t-land, ut-land, t-creature, ut-creature
+difference (t-land, ut-land) ----> 10% divided by len(this)
+prob = [.05, .85]
+new_probs = [.1/len(set)] * len(set)
+prob.append(new_probs)
+
+
+similar to P2, no valid targets on P1 feild:
+set(p2_bf) --> t-land, ut-land, t-creature, ut-creature
+difference (t-land, ut-land) ----> 10% divided by len(this)
+prob = [.05]
+new_probs = [.95/len(set)+1] * len(set)+1
+prob.append(new_probs)
+
+valid targets on both fields:
+set(p1_bf)
+set(p2_bf)
+prob = [.05]
+temp = .85/len(set(p2_bf))+1 
+prob.append(temp)
+new_probs_p1 = [.1/len(set)] * len(set)
+probs.append(new_probs_p1)
+temp_probs = [temp]*len(p2_bf)
+probs.append(temp_probs)
+
+I need to know what tapped and untapped land are coded as.
+tapped land = 4
+untapped land = 2
+
+tapped creature = 3
+untapped creature = 0
+
+
+
+
