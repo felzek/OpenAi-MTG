@@ -25,3 +25,38 @@ Game by game reward system:
 		- More likely to adopt the strategy used in this game.
 	3) Negative reward for losing the game.
 		- Less likely to adopt the strategy used in this game.
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+Initial State:
+
+Draw 7 cards, Field is empty, life totals are 20
+
+Game Phase 1: Player plays a card - Spell, Land, or Creature
+
+Possibility: Simplify board state to focus on just number of creatures
+
+20x20x8
+
+what if we simplify creatures (P1 to P2) as the difference between number of creatures? 40x8
+
+Slideling scale from -20 to 20: Reward based on how this number has changed
+
+Function scans battle field for creatures (both tapped and untapped), keeps track of difference between P1 and P2 creatures
+
+Every time P1 has advantage (positive #), P1 attack
+
+Life total Ranges? 20-10 ok with above strat - Swing out
+10-5 play safe - Swing with only the difference
+5 and below defensive (only safe strategy if P2 is tapped out (All creatures on P2 creatures are tapped) and P1 creatures > P2 creatures)
+
+Epsilon/(len of other probs) = .05/(len other probs in choices)
+
+Q-Table big?
+
+Phase 1: Basically above, update at end of every choice (this phase cycles until pass)
+
+Phase 2: Look at life instead, learn to look at that difference to decide on # to swing?
+When would Phase 2 probs update? When P2 goes to attack, how many blockers were there? Negative for not enough blocks, positive for having blocks
+
+Phase 3: Blocks
